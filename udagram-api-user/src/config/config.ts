@@ -1,14 +1,14 @@
 export const config = {
-  username: "postgres",
-  password: "password",
-  database: "postgres",
-  host: "tamln2.cl970snglyp4.us-east-1.rds.amazonaws.com",
+  username: process.env.POSTGRES_USERNAME,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DB,
+  host: process.env.POSTGRES_HOST,
   dialect: "postgres",
   aws_region: process.env.AWS_REGION,
   aws_profile: process.env.AWS_PROFILE,
-  aws_media_bucket: "tamln2-udacity",
+  aws_media_bucket: process.env.AWS_BUCKET,
   url: process.env.URL,
   jwt: {
-    secret: "12345678",
+    secret: process.env.JWT_SECRET,
   },
 };
