@@ -8,27 +8,27 @@ jobs:
       - checkout
       - restore_cache:
           keys: [frontend-build]
-      - run:
-          name: Install dependencies
-          command: |
-            sudo apt update
-            sudo apt install docker
+      # - run:
+      #     name: Install dependencies
+      #     command: |
+      #       sudo apt update
+      #       sudo apt install docker
       - run:
           name: Build
           command: |
-            - docker --version
+            docker --version
             # Build and tag feed-api
-            - docker build -t udagram-api-feed ./udagram-api-feed
-            - docker tag udagram-api-feed tamln2/udagram-api-feed:latest
+            docker build -t udagram-api-feed ./udagram-api-feed
+            docker tag udagram-api-feed tamln2/udagram-api-feed:latest
             # Build and tag user-api
-            - docker build -t udagram-api-user ./udagram-api-user
-            - docker tag udagram-api-user tamln2/udagram-api-user:latest
+            docker build -t udagram-api-user ./udagram-api-user
+            docker tag udagram-api-user tamln2/udagram-api-user:latest
             # Build and tag frontend-api
-            - docker build -t udagram-frontend ./udagram-frontend
-            - docker tag udagram-frontend tamln2/udagram-frontend:latest
+            docker build -t udagram-frontend ./udagram-frontend
+            docker tag udagram-frontend tamln2/udagram-frontend:latest
             # Build and tag reverseproxy-api
-            - docker build -t reverseproxy ./udagram-reverseproxy
-            - docker tag reverseproxy tamln2/reverseproxy:latest
+            docker build -t reverseproxy ./udagram-reverseproxy
+            docker tag reverseproxy tamln2/reverseproxy:latest
 
   push-images:
     docker:
