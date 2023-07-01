@@ -17,7 +17,7 @@ spec:
     spec:
       serviceAccountName: default-sa
       containers:
-        - image: tamln2/udagram-frontend:latest
+        - image: tamln2/udagram-frontend:v1
           name: frontend
           ports:
             - containerPort: 80
