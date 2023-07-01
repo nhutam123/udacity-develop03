@@ -1,0 +1,49 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:18
+    steps:
+      - checkout
+      - restore_cache:
+          keys: [frontend-build]
+      - run:
+          name: Build
+          command: |
+            - docker --version
+            # Build and tag feed-api
+            - docker build -t udagram-api-feed ./udagram-api-feed
+            - docker tag udagram-api-feed tamln2/udagram-api-feed:latest
+            # Build and tag user-api
+            - docker build -t udagram-api-user ./udagram-api-user
+            - docker tag udagram-api-user tamln2/udagram-api-user:latest
+            # Build and tag frontend-api
+            - docker build -t udagram-frontend ./udagram-frontend
+            - docker tag udagram-frontend tamln2/udagram-frontend:latest
+            # Build and tag reverseproxy-api
+            - docker build -t reverseproxy ./udagram-reverseproxy
+            - docker tag reverseproxy tamln2/reverseproxy:latest
+
+    push:
+      docker:
+        - image: circleci/node:18
+      steps:
+        - checkout
+        - restore_cache:
+            keys: [frontend-build]
+        - run:
+            name: Build front-end
+            command: |
+              - docker --version
+              - echo "$DOCKER_PASSWORD" | docker login -u "tamln2" --password "tam04031993!"
+              - docker push tamln2/udagram-api-feed:latest
+              - docker push tamln2/udagram-api-user:latest
+              - docker push tamln2/udagram-frontend:latest
+              - docker push tamln2/reverseproxy:latest
+workflows:
+  default:
+    jobs:
+      - build
+      - push:
+          requires: [build]
