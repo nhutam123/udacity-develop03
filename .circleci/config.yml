@@ -25,22 +25,22 @@ jobs:
             - docker build -t reverseproxy ./udagram-reverseproxy
             - docker tag reverseproxy tamln2/reverseproxy:latest
 
-    push-images:
-      docker:
-        - image: circleci/node:18
-      steps:
-        - checkout
-        - restore_cache:
-            keys: [frontend-build]
-        - run:
-            name: Build front-end
-            command: |
-              - docker --version
-              - echo "$DOCKER_PASSWORD" | docker login -u "tamln2" --password "tam04031993!"
-              - docker push tamln2/udagram-api-feed:latest
-              - docker push tamln2/udagram-api-user:latest
-              - docker push tamln2/udagram-frontend:latest
-              - docker push tamln2/reverseproxy:latest
+  push-images:
+    docker:
+      - image: circleci/node:18
+    steps:
+      - checkout
+      - restore_cache:
+          keys: [frontend-build]
+      - run:
+          name: Build front-end
+          command: |
+            - docker --version
+            - docker login -u "tamln2" --password "tam04031993!"
+            - docker push tamln2/udagram-api-feed:latest
+            - docker push tamln2/udagram-api-user:latest
+            - docker push tamln2/udagram-frontend:latest
+            - docker push tamln2/reverseproxy:latest
 workflows:
   default:
     jobs:
