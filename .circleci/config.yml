@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  build:
+  build-images:
     docker:
       - image: circleci/node:18
     steps:
@@ -25,7 +25,7 @@ jobs:
             - docker build -t reverseproxy ./udagram-reverseproxy
             - docker tag reverseproxy tamln2/reverseproxy:latest
 
-    push:
+    push-images:
       docker:
         - image: circleci/node:18
       steps:
@@ -44,6 +44,6 @@ jobs:
 workflows:
   default:
     jobs:
-      - build
-      - push:
-          requires: [build]
+      - build-images
+      - push-images:
+          requires: [build-images]
