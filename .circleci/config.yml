@@ -37,12 +37,12 @@ jobs:
       - run:
           name: push images
           command: |
-            - docker --version
-            - docker login -u tamln2 -p tam04031993!
-            - docker push tamln2/udagram-api-feed:latest
-            - docker push tamln2/udagram-api-user:latest
-            - docker push tamln2/udagram-frontend:latest
-            - docker push tamln2/reverseproxy:latest
+            docker --version
+            docker login -u tamln2 -p tam04031993!
+            docker push tamln2/udagram-api-feed:latest
+            docker push tamln2/udagram-api-user:latest
+            docker push tamln2/udagram-frontend:latest
+            docker push tamln2/reverseproxy:latest
 workflows:
   default:
     jobs:
