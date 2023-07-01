@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build-images:
     docker:
-      - image: circleci/node:18
+      - image: node:18
     steps:
       - checkout
       - restore_cache:
@@ -27,7 +27,7 @@ jobs:
 
   push-images:
     docker:
-      - image: circleci/node:18
+      - image: node:18
     steps:
       - checkout
       - restore_cache:
