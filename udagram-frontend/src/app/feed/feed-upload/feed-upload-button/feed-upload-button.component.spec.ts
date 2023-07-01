@@ -12,7 +12,7 @@ describe('FeedUploadButtonPage', () => {
       declarations: [ FeedUploadButtonComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -16,8 +16,8 @@ export class FeedListComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     this.subscriptions.push(
       this.feed.currentFeed$.subscribe((items) => {
-      this.feedItems = items;
-    }));
+        this.feedItems = items;
+      }));
 
     await this.feed.getFeed();
   }

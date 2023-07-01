@@ -13,7 +13,7 @@ describe('FeedItemComponent', () => {
       declarations: [ FeedItemComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

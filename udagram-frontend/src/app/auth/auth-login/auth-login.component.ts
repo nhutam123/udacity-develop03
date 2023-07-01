@@ -37,8 +37,8 @@ export class AuthLoginComponent implements OnInit {
     if (!this.loginForm.valid) { return; }
 
     this.auth.login(
-        this.loginForm.controls.email.value,
-        this.loginForm.controls.password.value)
+      this.loginForm.controls.email.value,
+      this.loginForm.controls.password.value)
       .then((user) => {
         this.modal.dismiss();
       })
@@ -46,5 +46,5 @@ export class AuthLoginComponent implements OnInit {
         this.error = e.statusText;
         throw e;
       });
-    }
+  }
 }

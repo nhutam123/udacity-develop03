@@ -33,13 +33,13 @@ export class AuthService {
 
   async login(email: string, password: string): Promise<any> {
     return this.api.post('/users/auth/login',
-              {email: email, password: password})
-              .then((res) => {
-                this.setTokenAndUser(res.token, res.user);
-                return res;
-              })
-              .catch((e) => { throw e; });
-      // return user !== undefined;
+      {email: email, password: password})
+      .then((res) => {
+        this.setTokenAndUser(res.token, res.user);
+        return res;
+      })
+      .catch((e) => { throw e; });
+    // return user !== undefined;
   }
 
   logout(): boolean {
@@ -49,11 +49,11 @@ export class AuthService {
 
   register(user: User, password: string): Promise<any> {
     return this.api.post('/users/auth/',
-              {email: user.email, password: password})
-              .then((res) => {
-                this.setTokenAndUser(res.token, res.user);
-                return res;
-              })
-              .catch((e) => { throw e; });
+      {email: user.email, password: password})
+      .then((res) => {
+        this.setTokenAndUser(res.token, res.user);
+        return res;
+      })
+      .catch((e) => { throw e; });
   }
 }

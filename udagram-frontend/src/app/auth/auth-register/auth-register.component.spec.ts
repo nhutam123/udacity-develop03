@@ -14,7 +14,7 @@ describe('AuthRegisterPage', () => {
       declarations: [ AuthRegisterComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

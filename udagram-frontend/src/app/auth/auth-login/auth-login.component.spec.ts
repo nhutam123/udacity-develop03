@@ -14,7 +14,7 @@ describe('AuthLoginPage', () => {
       declarations: [ AuthLoginComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

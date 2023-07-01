@@ -46,13 +46,13 @@ export class AuthRegisterComponent implements OnInit {
     };
 
     this.auth.register(newuser, this.registerForm.controls.password.value)
-              .then((user) => {
-                this.modal.dismiss();
-              })
-             .catch((e) => {
-              this.error = e.statusText;
-              throw e;
-             });
+      .then((user) => {
+        this.modal.dismiss();
+      })
+      .catch((e) => {
+        this.error = e.statusText;
+        throw e;
+      });
   }
 
   passwordsMatch(group: FormGroup) {

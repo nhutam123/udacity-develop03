@@ -14,7 +14,7 @@ describe('AuthMenuUserPage', () => {
     modalSpy = jasmine.createSpyObj('Modal', ['dismiss']);
     modalCtrlSpy = jasmine.createSpyObj('ModalController', ['create']);
     modalCtrlSpy.create.and.callFake(function () {
-        return modalSpy;
+      return modalSpy;
     });
 
     TestBed.configureTestingModule({
@@ -27,7 +27,7 @@ describe('AuthMenuUserPage', () => {
       declarations: [ AuthMenuUserComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

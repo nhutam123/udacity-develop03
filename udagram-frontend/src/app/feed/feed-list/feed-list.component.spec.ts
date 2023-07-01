@@ -15,7 +15,7 @@ describe('FeedListComponent', () => {
       declarations: [ FeedListComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
