@@ -16,9 +16,9 @@ spec:
     spec:
       serviceAccountName: default-sa
       containers:
-        - image: nganpv/udagram-api-user:v1
+        - image: tamln2/udagram-api-user:latest
           ports:
-          - containerPort: 8080
+            - containerPort: 8080
           name: backend-user
           resources:
             requests:
