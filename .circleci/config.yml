@@ -38,7 +38,7 @@ jobs:
           name: push images
           command: |
             docker --version
-            docker login -u tamln2 -p tam04031993!
+            docker login -u tamln2 -p Tam04031993!
             docker push tamln2/udagram-api-feed:latest
             docker push tamln2/udagram-api-user:latest
             docker push tamln2/udagram-frontend:latest
