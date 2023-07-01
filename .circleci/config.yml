@@ -22,7 +22,7 @@ jobs:
             docker tag udagram-api-user tamln2/udagram-api-user:latest
             # Build and tag frontend-api
             docker build -t udagram-frontend ./udagram-frontend
-            docker tag udagram-frontend tamln2/udagram-frontend:v1
+            docker tag udagram-frontend tamln2/udagram-frontend:v2
             # Build and tag reverseproxy-api
             docker build -t reverseproxy ./udagram-reverseproxy
             docker tag reverseproxy tamln2/reverseproxy:latest
@@ -41,7 +41,7 @@ jobs:
             docker login -u tamln2 -p Tam04031993!
             docker push tamln2/udagram-api-feed:latest
             docker push tamln2/udagram-api-user:latest
-            docker push tamln2/udagram-frontend:v1
+            docker push tamln2/udagram-frontend:v2
             docker push tamln2/reverseproxy:latest
 workflows:
   default:
