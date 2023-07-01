@@ -8,11 +8,8 @@ jobs:
       - checkout
       - restore_cache:
           keys: [frontend-build]
-      # - run:
-      #     name: Install dependencies
-      #     command: |
-      #       sudo apt update
-      #       sudo apt install docker
+      - setup_remote_docker:
+          docker_layer_caching: true
       - run:
           name: Build
           command: |
