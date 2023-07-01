@@ -7,8 +7,6 @@ data:
   JWT_SECRET: YMkcX9oyGyTxPvYs7oIihU0U0VmGPjRTks1...
   POSTGRES_DB: postgres
   POSTGRES_HOST: tamln2.cl970snglyp4.us-east-1.rds.amazonaws.com
-  POSTGRES_USERNAME: postgres
-  POSTGRES_PASSWORD: password
   URL: http://a963c50ec4b284c2085aa3ee713889fc-652886343.us-east-1.elb.amazonaws.com:8100
 metadata:
   name: env-config
